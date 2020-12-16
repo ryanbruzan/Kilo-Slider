@@ -1,0 +1,166 @@
+.ks-slider {
+	overflow: hidden;
+	width:1200px;
+	height:500px;
+	white-space:nowrap;
+	position: relative;
+	font-size: 0;
+}
+
+.ks-slider .ks-table {
+	display:table;
+}
+
+.ks-slider .ks-table .ks-table-row {
+	display:table-row;
+}
+
+.ks-slider .ks-table .ks-table-cell {
+	display:table-cell;
+	vertical-align:middle;
+	text-align:center;
+}
+
+.ks-slider .ks-slide-track {
+	width:100%;
+	height: 100%;
+	position: relative;
+	overflow: visible;
+	transition: all 800ms cubic-bezier(0.215, 0.61, 0.355, 1);
+}
+
+.ks-slider .ks-slide {
+	width:100%;
+	height:100%;
+	display:inline-block;
+	position: relative;
+	background-position: 50% 50%;
+	background-repeat: no-repeat;
+}
+
+.ks-slider .ks-slide.ks-fill {
+	background-size: cover;
+}
+
+.ks-slider .ks-slide.ks-fit {
+	background-size: contain;
+}
+
+.ks-slider .ks-slide .ks-slide-content {
+	width:100%;
+	height:100%;
+	position:absolute;
+	top:0;
+	left:0;
+	white-space:normal;
+	font-size: 14px;
+}
+
+.ks-slider .ks-slide .ks-slide-loading {
+	background:#fff;
+	position:absolute;
+	top:0;
+	left:0;
+	width:100%;
+	height:100%;
+	opacity: 1;
+	transition: opacity 0.3s ease;
+}
+
+.ks-slider .ks-slide.loaded .ks-slide-loading {
+	opacity: 0;
+}
+
+.ks-loading-spinner {
+	background-color:rgba(0,0,0,0);
+	border-radius:50%;
+	animation:spinner 0.6s infinite linear;
+	border-width:2px;
+	border-style:solid;
+	border-color:#888;
+	border-top-color:rgba(0,0,0,0);
+	border-left-color:rgba(0,0,0,0);
+	width:24px;
+	height:24px;
+	box-sizing:border-box;
+	transform:translateZ(0);
+	display:inline-block;
+}
+
+@keyframes spinner {
+	0% {
+		transform:rotate(0deg);
+	}
+
+	100% {
+		transform:rotate(360deg);
+	}
+}
+
+.ks-slider .ks-arrow {
+	position:absolute;
+	top:0;
+	height:100%;
+	width:50%;
+	max-width: 96px;
+	background-color: transparent;
+	background-position: 24px 50%;
+	background-repeat: no-repeat;
+	background-size: auto;
+	cursor: pointer;
+	opacity: 0;
+	transition: all 0.3s ease;
+	z-index:1;
+}
+
+.ks-slider .ks-arrow.ks-left-arrow {
+	background-image: url(resources/left.svg);
+	left:0;
+}
+
+.ks-slider .ks-arrow.ks-right-arrow {
+	background-image: url(resources/right.svg);
+	background-position: calc(100% - 24px) 50%;
+	right:0;
+}
+
+.ks-slider:hover .ks-arrow {
+	opacity: 0.8;
+}
+
+.ks-slider .ks-arrow:hover {
+	opacity: 1;
+}
+
+.ks-slider .ks-dots-container {
+	position: absolute;
+	bottom:0;
+	width:100%;
+	height: auto;
+	text-align: center;
+	z-index: 2;
+}
+
+.ks-slider .ks-dots-container .ks-dot {
+	display:inline-block;
+	vertical-align: middle;
+	padding:16px 6px;
+	cursor: pointer;
+	transition: all 0.3s ease;
+}
+
+.ks-slider .ks-dots-container .ks-dot .ks-dot-visual {
+	width:6px;
+	height:6px;
+	border-radius: 10px;
+	background:#fff;
+	vertical-align: middle;
+	transition: all 0.3s ease;
+	opacity: 0.5;
+}
+
+.ks-slider .ks-dots-container .ks-dot.selected .ks-dot-visual {
+	width:10px;
+	height:10px;
+	opacity: 1;
+}
